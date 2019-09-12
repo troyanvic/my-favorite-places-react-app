@@ -1,0 +1,59 @@
+@import "../../styles/scss/variables";
+@import "../../styles/scss/mixins";
+
+.search {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0 30px;
+
+  &__field {
+    display: block;
+    width: 100%;
+    border: 2px solid $searchBorder;
+    border-radius: 3px;
+    padding: 10px;
+    color: $mainText;
+    @include transition('.3s', 'all', 'ease-in-out');
+
+    &:focus {
+      outline: none;
+      border-color: $mainText;
+
+      &::-webkit-input-placeholder {
+        color: $mainText;
+      }
+
+      &::-moz-placeholder {
+        color: $mainText;
+      }
+
+      &:-ms-input-placeholder {
+        color: $mainText;
+      }
+
+      &:-moz-placeholder {
+        color: $mainText;
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      color: #9da2a7;
+      @include transition('.3s', 'all', 'ease-in-out');
+    }
+
+    &::-moz-placeholder {
+      color: #9da2a7;
+      @include transition('.3s', 'all', 'ease-in-out');
+    }
+
+    &:-ms-input-placeholder {
+      color: #9da2a7;
+      @include transition('.3s', 'all', 'ease-in-out');
+    }
+
+    &:-moz-placeholder {
+      color: #9da2a7;
+      @include transition('.3s', 'all', 'ease-in-out');
+    }
+  }
+}
