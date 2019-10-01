@@ -1,24 +1,44 @@
 import React, { Component } from 'react';
+import { connect }          from 'react-redux';
+import Geocode              from 'react-geocode';
+
+// constants
+import { GMAP_API_KEY } from '../../constants';
+
+// actions
+import { changeCurrentPlace } from '../../actions/mapActions';
 
 class Search extends Component {
   constructor( props ) {
     super( props );
 
+    // refs
     this.setSearchInput = this.setSearchInput.bind( this );
 
-    this.state = {
-      location: 'Kiev'
-    }
+    // set Google Map API Key
+    Geocode.setApiKey( GMAP_API_KEY );
   }
 
   // set search input ref
   setSearchInput = node => this.searchInput = node;
 
-  // processing search
+  /*
+   * Processing search action
+   */
   handleSubmit = ( e ) => {
     e.preventDefault();
 
-    this.setState( { location: this.searchInput.value } );
+    const location = this.searchInput.value;
+
+    Geocode.fromAddress( location ).then( response => {
+        const { lat, lng } = response.results[0].geometry.location;
+
+        this.props.changePlace( { location, lat, lng } );
+      },
+      error => {
+        console.error( error );
+      }
+    );
   };
 
   render() {
@@ -28,11 +48,18 @@ class Search extends Component {
         <input className="search__field"
                ref={ this.setSearchInput }
                type="text"
-               defaultValue={ this.state.location }
+               defaultValue={ this.props.currentPlace.location }
                placeholder="Find a location..." />
       </form>
     )
   }
 }
 
-export default Search;
+// store
+const mapStateToProps    = store => ( { currentPlace: store.currentPoint } );
+const mapDispatchToProps = { changePlace: changeCurrentPlace };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)( Search );
