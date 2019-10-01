@@ -2,9 +2,9 @@
 import { CHANGE_PLACE } from '../constants';
 
 const defaultPoint = {
-  location: 'Kiev',
-  lat: 50.4501,
-  lng: 30.5234
+  location: 'Zaporizhzhia, Ukraine',
+  lat: 47.83880000000001,
+  lng: 35.13956699999994
 };
 
 export default ( currentPlace = defaultPoint, action ) => {
