@@ -1,4 +1,4 @@
-export const GMAP_API_KEY = 'AIzaSyDQ2kknsWUNJV6kmKx8Sb-vJ6hoxQsobw8';
+export const GMAP_API_KEY = 'AIzaSyBjKh5Y6i4W4cBkzzYmHiQcJfdag6p-H28';
 
 // actions
 export const CHANGE_PLACE = 'CHANGE_PLACE';

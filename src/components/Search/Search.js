@@ -41,7 +41,7 @@ class Search extends Component {
    *
    * @param place | object
    */
-  onPlaceSelected = place => {
+  handleSelect = place => {
     const { changePlace } = this.props;
     let address = place.address_components;
 
@@ -75,7 +75,7 @@ class Search extends Component {
     return (
       <section className="search">
         <Autocomplete className="search__field"
-                      onPlaceSelected={ this.onPlaceSelected }
+                      onPlaceSelected={ this.handleSelect }
                       types={ ['(regions)'] }
                       defaultValue={ this.props.currentPlace.location }
                       placeholder="Find a location..." />
