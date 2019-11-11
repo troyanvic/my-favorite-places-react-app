@@ -4,6 +4,7 @@
 # Basic
 # Container
 # Search
+# Map
 # Media Queries
 */
 
@@ -45,3 +46,8 @@ body {
 # Search
 --------------------------*/
 @import "../components/Search/_Search";
+
+/*-------------------------
+# Map
+--------------------------*/
+@import "../components/Map/_Map";
