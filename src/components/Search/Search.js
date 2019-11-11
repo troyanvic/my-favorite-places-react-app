@@ -29,7 +29,7 @@ class Search extends Component {
       for ( let i = 0; i < address.length; i++ ) {
         let types = address[i].types[0];
 
-        if ( types && 'locality' === types ) {
+        if ( types && types === 'locality' ) {
           return address[i].long_name;
         }
       }
@@ -43,16 +43,17 @@ class Search extends Component {
    */
   handleSelect = place => {
     const { changePlace } = this.props;
-    let address = place.address_components;
+    let address  = place.address_components,
+        location = place.formatted_address;
 
     if ( address ) {
-      let location = this.getCity( address ),
+      let city     = this.getCity( address ),
           placeGeo = place.geometry.location,
           lat      = placeGeo.lat(),
           lng      = placeGeo.lng();
 
       // add to store
-      changePlace( { location, lat, lng } );
+      changePlace( { city, location, lat, lng } );
     } else {
       let placeName = place.name;
 
@@ -61,7 +62,7 @@ class Search extends Component {
             const { lat, lng } = response.results[0].geometry.location;
 
             // add to store
-            changePlace( { location: placeName, lat, lng } );
+            changePlace( { city: placeName, location: placeName, lat, lng } );
           },
           error => {
             console.error( error );
@@ -79,6 +80,8 @@ class Search extends Component {
                       types={ ['(regions)'] }
                       defaultValue={ this.props.currentPlace.location }
                       placeholder="Find a location..." />
+        <button className="search__button"
+                type="button" />
       </section>
     )
   }

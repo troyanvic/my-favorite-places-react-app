@@ -3,7 +3,7 @@
 
 .search {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: $sectionMarginBottom;
   padding: 0 30px;
 
   &__field {
@@ -11,7 +11,7 @@
     width: 100%;
     border: 2px solid $searchBorder;
     border-radius: 3px;
-    padding: 10px;
+    padding: 10px 35px 10px 10px;
     color: $mainText;
     @include transition('.3s', 'all', 'ease-in-out');
 
@@ -37,23 +37,40 @@
     }
 
     &::-webkit-input-placeholder {
-      color: #9da2a7;
+      color: $defaultPlaceholder;
       @include transition('.3s', 'all', 'ease-in-out');
     }
 
     &::-moz-placeholder {
-      color: #9da2a7;
+      color: $defaultPlaceholder;
       @include transition('.3s', 'all', 'ease-in-out');
     }
 
     &:-ms-input-placeholder {
-      color: #9da2a7;
+      color: $defaultPlaceholder;
       @include transition('.3s', 'all', 'ease-in-out');
     }
 
     &:-moz-placeholder {
-      color: #9da2a7;
+      color: $defaultPlaceholder;
       @include transition('.3s', 'all', 'ease-in-out');
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 6px;
+    right: 36px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    outline: none;
+    border: none;
+    padding: 0;
+    @include background-mask('search', $mainText, contain);
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

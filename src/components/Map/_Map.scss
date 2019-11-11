@@ -1,6 +1,8 @@
+@import "../../styles/scss/variables";
+
 .map {
   height: 400px;
-  margin-bottom: 40px;
+  margin-bottom: $sectionMarginBottom;
 
   &__element {
     height: 100%;

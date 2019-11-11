@@ -1,3 +1,15 @@
 @mixin transition($duration, $scope, $animation) {
   transition: #{$duration} #{$scope} #{$animation};
 }
+
+@mixin background-image($image, $type) {
+  background-image: url('../../images/#{$image}.#{$type}');
+}
+
+@mixin background-mask($image, $maskColor, $maskSize) {
+  background-color: $maskColor;
+  -webkit-mask-image: url('../../images/#{$image}.svg');
+  mask-image: url('../../images/#{$image}.svg');
+  -webkit-mask-size: $maskSize;
+  mask-size: $maskSize;
+}

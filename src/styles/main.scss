@@ -5,6 +5,7 @@
 # Container
 # Search
 # Map
+# Current Location
 # Media Queries
 */
 
@@ -34,7 +35,7 @@ body {
   padding: 30px 15px;
 
   &__title {
-    margin-bottom: 35px;
+    margin-bottom: $sectionMarginBottom;
     text-align: center;
     font-size: 32px;
     font-weight: 500;
@@ -51,3 +52,8 @@ body {
 # Map
 --------------------------*/
 @import "../components/Map/_Map";
+
+/*-------------------------
+# Current Location
+--------------------------*/
+@import "../components/CurrentLocation/_CurrentLocation";

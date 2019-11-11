@@ -1,0 +1,40 @@
+@import "../../styles/scss/variables";
+@import "../../styles/scss/mixins";
+
+.location {
+  margin-bottom: $sectionMarginBottom;
+  text-align: center;
+
+  &__container {
+    display: inline-block;
+  }
+
+  &__name {
+    @extend %dib_vam;
+    margin-right: 7px;
+    font-size: 20px;
+    font-weight: 500;
+    color: $mainText;
+  }
+
+  &__button {
+    @extend %dib_vam;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    outline: none;
+    border: none;
+    padding: 0;
+    @include background-mask('star', $mainText, contain);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// extends
+%dib_vam {
+  display: inline-block;
+  vertical-align: middle;
+}
