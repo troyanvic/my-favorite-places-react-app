@@ -3,7 +3,7 @@ import { connect }                          from 'react-redux';
 import { compose, withProps }               from 'recompose';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
-/*
+/**
  * Create map element with HOC
  *
  * @return React Component

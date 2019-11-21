@@ -25,10 +25,17 @@
     outline: none;
     border: none;
     padding: 0;
-    @include background-mask('star', $mainText, contain);
 
     &:hover {
       cursor: pointer;
+    }
+
+    &--saved {
+      @include background-mask('star__filled', $mainText, contain);
+    }
+
+    &--unsaved {
+      @include background-mask('star', $mainText, contain);
     }
   }
 }

@@ -17,7 +17,7 @@ class Search extends Component {
     Geocode.setApiKey( GMAP_API_KEY );
   }
 
-  /*
+  /**
    * Get city name from autocomplete input value
    *
    * @param address | array
@@ -36,7 +36,7 @@ class Search extends Component {
     } else return '';
   };
 
-  /*
+  /**
    * Processing search autocomplete and save data to store
    *
    * @param place | object

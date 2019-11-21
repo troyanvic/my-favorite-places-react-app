@@ -5,6 +5,7 @@ import Search          from './Search';
 import Map             from './Map';
 import CurrentLocation from './CurrentLocation';
 import LocationList    from './LocationList';
+import Footer          from './Footer';
 
 // style
 import '../styles/main.scss';
@@ -18,6 +19,7 @@ class App extends Component{
                 <Map />
                 <CurrentLocation />
                 <LocationList />
+                <Footer />
             </div>
         )
     }

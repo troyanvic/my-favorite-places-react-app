@@ -5,7 +5,8 @@ const defaultPoint = {
   city: 'Zaporizhzhia',
   location: 'Zaporizhzhia, Ukraine',
   lat: 47.83880000000001,
-  lng: 35.13956699999994
+  lng: 35.13956699999994,
+  added: false
 };
 
 export default ( currentPlace = defaultPoint, action ) => {

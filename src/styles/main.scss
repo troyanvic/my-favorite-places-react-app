@@ -6,7 +6,7 @@
 # Search
 # Map
 # Current Location
-# Media Queries
+# Location List
 */
 
 @import "scss/variables";
@@ -23,6 +23,16 @@ body {
   font-family: "Arial", sans-serif;
   font-size: 14px;
   line-height: 1;
+}
+
+::-moz-selection {
+  color: $white;
+  background: $mainText;
+}
+
+::selection {
+  color: $white;
+  background: $mainText
 }
 
 /*-------------------------
@@ -57,3 +67,8 @@ body {
 # Current Location
 --------------------------*/
 @import "../components/CurrentLocation/_CurrentLocation";
+
+/*-------------------------
+# Location List
+--------------------------*/
+@import "../components/LocationList/_LocationList";
