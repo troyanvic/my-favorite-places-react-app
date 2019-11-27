@@ -1,7 +1,7 @@
 import { CHANGE_PLACE } from '../constants';
 
 /**
- * Change current place
+ * Change current location
  *
  * @param currentPlace | object
  *

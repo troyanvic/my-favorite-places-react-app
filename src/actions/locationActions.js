@@ -1,4 +1,4 @@
-import { ADD_PLACE } from '../constants';
+import { ADD_PLACE, REMOVE_PLACE } from '../constants';
 
 /**
  * Adding new location
@@ -10,6 +10,20 @@ import { ADD_PLACE } from '../constants';
 export function addLocation( location ) {
   return {
     type: ADD_PLACE,
+    payload: location
+  }
+}
+
+/**
+ * Deleting existing location
+ *
+ * @param location | object
+ *
+ * @return object
+ */
+export function removeLocation( location ) {
+  return {
+    type: REMOVE_PLACE,
     payload: location
   }
 }

@@ -2,32 +2,9 @@ import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 
 // actions
-import { addLocation } from '../../actions/locationActions';
+import { addLocation, removeLocation } from '../../actions/locationActions';
 
 class CurrentLocation extends Component {
-  constructor( props ) {
-    super( props );
-
-    this.state = {
-      star: false
-    }
-  }
-
-  shouldComponentUpdate( prevProps, prevState ) {
-    const { lat: currentPointLat, lng: currentPointLng } = prevProps.currentLocationObj;
-
-    this.props.savedLocations.forEach( location => {
-      const { lat, lng } = location;
-      const { star } = this.state;
-
-      if ( lat === currentPointLat && lng === currentPointLng && prevState.star === star ) {
-        this.setState( { star: !star } );
-      }
-    });
-
-    return true;
-  }
-
   /**
    * Processing click to star button.
    * Call adding location to store or removing location to store
@@ -36,17 +13,21 @@ class CurrentLocation extends Component {
    * @param star | bool
    */
   handleClick = ( location, star ) => {
-    //if ( !star ) {
-      //this.setState(
-        //() => ( { star: !star } ),
-        /*() => */this.props.addLocation( location );
-      /*);
-    }*/
+    if ( star ) {
+      this.props.removeLocation( location );
+    } else this.props.addLocation( location );
   };
 
   render() {
-    const { currentLocation, currentLocationObj } = this.props;
-    const { star } = this.state;
+    const { currentLocation, currentLocationObj, savedLocations } = this.props;
+    const { lat: currentLat, lng: currentLng } = currentLocationObj;
+    let star = false;
+
+    savedLocations.forEach( location => {
+      const { lat, lng, added } = location;
+
+      if ( lat === currentLat && lng === currentLng ) star = added;
+    });
 
     return (
       <section className="location">
@@ -54,7 +35,7 @@ class CurrentLocation extends Component {
           <span className="location__name">{ currentLocation }</span>
           <button className={ star ? 'location__button location__button--saved' : 'location__button location__button--unsaved' }
                   type="button"
-                  onClick={ () => this.handleClick( currentLocationObj, star ) }/>
+                  onClick={ () => this.handleClick( currentLocationObj, star ) } />
         </div>
       </section>
     )
@@ -68,7 +49,10 @@ const mapStateToProps = store => ({
   savedLocations: store.savedLocations
 });
 
-const mapDispatchToProps = { addLocation: addLocation };
+const mapDispatchToProps = {
+  addLocation: addLocation,
+  removeLocation: removeLocation
+};
 
 export default connect(
   mapStateToProps,
