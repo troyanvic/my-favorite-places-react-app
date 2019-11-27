@@ -9,8 +9,8 @@ export default ( savedLocations = defaultAddedLocations, action ) => {
       const { city, location, lat, lng } = action.payload;
 
       return [
-        ...savedLocations,
-        { city, location, lat, lng, added: true }
+        { city, location, lat, lng, added: true },
+        ...savedLocations
       ];
 
     default:

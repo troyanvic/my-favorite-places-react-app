@@ -2,6 +2,8 @@
 @import "../../styles/scss/mixins";
 
 .saved-locations {
+  margin-bottom: $sectionMarginBottom;
+
   &__title {
     margin: 0;
     border: 1px solid $locationsBorder;
@@ -19,7 +21,7 @@
     border: 1px solid $locationsBorder;
     border-top: none;
     border-radius: 0 0 7px 7px;
-    padding: 25px 0;
+    padding: 20px 0;
     text-align: center;
     font-size: 15px;
     color: $mainText;
@@ -27,14 +29,17 @@
   }
 
   &__list {
-    margin: 0;
+    margin: 0 0 20px 0;
     padding: 0;
     list-style: none;
 
     &--item {
+      $locationItem: &;
+
+      position: relative;
       border: 1px solid $locationsBorder;
       border-top: none;
-      padding: 20px;
+      padding: 20px 35px 20px 20px;
       font-size: 15px;
       color: $mainText;
       background: $locationsBackground;
@@ -48,7 +53,42 @@
         background: $mainText;
         color: $white;
         cursor: pointer;
+
+        #{$locationItem}__icon {
+          right: 7px;
+          background-color: $white;
+        }
       }
+
+      &__icon {
+        position: absolute;
+        top: 15px;
+        right: 13px;
+        width: 24px;
+        height: 24px;
+        @include background-mask('arrow--right', $mainText, contain);
+        @include transition('.3s', 'all', 'ease-in-out');
+      }
+    }
+  }
+
+  &__more {
+    display: block;
+    width: 180px;
+    margin: 0 auto;
+    border: 2px solid $mainText;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: $mainText;
+    background-color: transparent;
+    @include transition('.3s', 'all', 'ease-in-out');
+
+    &:hover {
+      color: $white;
+      background-color: $mainText;
+      cursor: pointer;
     }
   }
 }

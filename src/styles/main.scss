@@ -45,7 +45,7 @@ body {
   padding: 30px 15px;
 
   &__title {
-    margin-bottom: $sectionMarginBottom;
+    margin: 0 0 $sectionMarginBottom 0;
     text-align: center;
     font-size: 32px;
     font-weight: 500;
