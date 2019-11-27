@@ -7,6 +7,7 @@
 # Map
 # Current Location
 # Location List
+# Footer
 */
 
 @import "scss/variables";
@@ -19,7 +20,12 @@
 /*-------------------------
 # Basic
 --------------------------*/
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-family: "Arial", sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -35,12 +41,18 @@ body {
   background: $mainText
 }
 
+#root {
+  height: 100%;
+}
+
 /*-------------------------
 # Container
 --------------------------*/
 .app {
+  position: relative;
   width: 100%;
   max-width: 600px;
+  min-height: 100%;
   margin: 0 auto;
   padding: 30px 15px;
 
@@ -72,3 +84,8 @@ body {
 # Location List
 --------------------------*/
 @import "../components/LocationList/_LocationList";
+
+/*-------------------------
+# Footer
+--------------------------*/
+@import "../components/Footer/_Footer";
