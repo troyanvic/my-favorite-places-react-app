@@ -8,3 +8,36 @@
     height: 100%;
   }
 }
+
+/*
+ * Media query
+ *
+ * 480px
+ */
+@media (max-width: 480px) {
+  .map {
+    height: 300px;
+  }
+}
+
+/*
+ * Media query
+ *
+ * 375px
+ */
+@media (max-width: 375px) {
+  .map {
+    height: 250px;
+  }
+}
+
+/*
+ * Media query
+ *
+ * 320px
+ */
+@media (max-width: 320px) {
+  .map {
+    height: 200px;
+  }
+}
