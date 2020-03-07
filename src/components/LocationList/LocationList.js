@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect }          from 'react-redux';
+import { Link }             from 'react-router-dom';
 
 // components
 import LocationItem from './LocationItem';
@@ -38,7 +39,7 @@ class LocationList extends Component {
           }
         </ul>
 
-        { moreLocationItems ? <button className="saved-locations__more">Show all locations</button> : false }
+        { moreLocationItems ? <Link className="saved-locations__more" to="/locations">Show all locations</Link> : false }
       </div>
     )
   }
