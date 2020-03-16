@@ -3,6 +3,7 @@
 # Normalize
 # Basic
 # Container
+# Header
 # Search
 # Map
 # Current Location
@@ -11,6 +12,7 @@
 */
 
 @import "scss/variables";
+@import "scss/mixins";
 
 /*-------------------------
 # Normalize
@@ -55,15 +57,12 @@ body {
   min-height: 100%;
   margin: 0 auto;
   padding: 30px 15px;
-
-  &__title {
-    margin: 0 0 $sectionMarginBottom 0;
-    text-align: center;
-    font-size: 32px;
-    font-weight: 500;
-    color: $mainText;
-  }
 }
+
+/*-------------------------
+# Header
+--------------------------*/
+@import "../components/Header/_Header";
 
 /*-------------------------
 # Search

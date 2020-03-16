@@ -5,47 +5,29 @@ import {
   Route
 } from 'react-router-dom';
 
-// components
-import Search          from './Search';
-import Map             from './Map';
-import CurrentLocation from './CurrentLocation';
-import LocationList    from './LocationList';
-import Footer          from './Footer';
+// route components
+import Home      from './routeComponents/Home';
+import Locations from './routeComponents/Locations';
 
 // style
 import '../styles/main.scss';
 
-class App extends Component{
-    render() {
-        return (
-          <Router>
-            <Switch>
-              <Route exact
-                     path={ '/' }
-                     render={ () =>
-                       <div className="app">
-                         <h1 className="app__title">My favorite places</h1>
-                         <Search />
-                         <Map />
-                         <CurrentLocation />
-                         <LocationList />
-                         <Footer />
-                       </div>
-                     } />
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact
+                 path={ '/' }
+                 render={ ( props ) => <Home { ...props } /> } />
 
-              <Route exact
-                     path={ '/locations' }
-                     render={ () =>
-                       <div className="app">
-                         <h1 className="app__title">My favorite places</h1>
-                         <LocationList />
-                         <Footer />
-                       </div>
-                     } />
-            </Switch>
-          </Router>
-        )
-    }
+          <Route exact
+                 path={ '/locations' }
+                 render={ ( props ) => <Locations { ...props } /> } />
+        </Switch>
+      </Router>
+    )
+  }
 }
 
 export default App;

@@ -21,7 +21,7 @@ class LocationList extends Component {
    * @return html
    */
   get getLocationsItem () {
-    let moreLocationItems = false;
+    let moreLocationItems = 0;
 
     return (
       <div className="saved-locations__list--wrapper">
@@ -30,16 +30,16 @@ class LocationList extends Component {
             this.props.savedLocations.map( ( location, i ) => {
               const { lat, lng } = location;
 
-              if ( i <= 2 ) return <LocationItem key={ lat + lng } locationProps={ location } />;
-              else {
-                moreLocationItems = !moreLocationItems;
-                return false;
-              }
+              moreLocationItems = i;
+
+              if ( i <= 2 ) {
+                return <LocationItem key={ lat + lng } locationProps={ location } />;
+              } else return false;
             })
           }
         </ul>
 
-        { moreLocationItems ? <Link className="saved-locations__more" to="/locations">Show all locations</Link> : false }
+        { moreLocationItems >= 3 ? <Link className="saved-locations__more" to="/locations">Show all locations</Link> : false }
       </div>
     )
   }
