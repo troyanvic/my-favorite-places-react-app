@@ -8,6 +8,7 @@
 # Map
 # Current Location
 # Location List
+# Location pagination
 # Footer
 */
 
@@ -83,6 +84,11 @@ body {
 # Location List
 --------------------------*/
 @import "../components/LocationList/_LocationList";
+
+/*-------------------------
+# Location pagination
+--------------------------*/
+@import "../components/Pagination/_Pagination";
 
 /*-------------------------
 # Footer

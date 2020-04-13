@@ -1,0 +1,64 @@
+@import "../../styles/scss/variables";
+@import "../../styles/scss/mixins";
+
+.pagination {
+  $pagination: &;
+
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 2px;
+    border: 1px solid $locationsBorder;
+    border-radius: 7px;
+    color: $mainText;
+    background: $locationsBackground;
+    @include transition('.3s', 'all', 'ease');
+
+    &:hover {
+      color: $white;
+      background: $mainText;
+      cursor: pointer;
+
+      & #{$pagination}__icon {
+        background-color: $white;
+      }
+    }
+
+    &--active {
+      background: $mainText;
+      color: $white;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &--inactive {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    @include transition('.3s', 'all', 'ease-in-out');
+
+    &--left {
+      @include background-mask('pagination--left', $mainText, contain);
+    }
+
+    &--right {
+      @include background-mask('pagination--right', $mainText, contain);
+    }
+  }
+}

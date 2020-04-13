@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
-  handleBack = ( history ) => {
+  /**
+   * Processing to click on the back button
+   */
+  handleClick = ( history ) => {
     history.goBack();
   };
 
+  /**
+   * Render method
+   */
   render() {
     let { location, history } = this.props.props;
 
@@ -18,10 +24,10 @@ class Header extends Component {
       return (
         <header className="header">
           <h1 className="header__title">
-            <div className="header__title--back"
-                 onClick={ () => this.handleBack( history ) }>
+            <span className="header__title--back"
+                 onClick={ () => this.handleClick( history ) }>
               <span className="header__title--back__icon" />
-            </div>My favorite places
+            </span>My favorite places
           </h1>
         </header>
       )

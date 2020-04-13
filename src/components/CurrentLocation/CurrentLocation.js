@@ -7,7 +7,7 @@ import { addLocation, removeLocation } from '../../actions/locationActions';
 class CurrentLocation extends Component {
   /**
    * Processing click to star button.
-   * Call adding location to store or removing location to store
+   * Call to save location to the store or removing location from the store
    *
    * @param location | object
    * @param star | bool
@@ -18,6 +18,11 @@ class CurrentLocation extends Component {
     } else this.props.addLocation( location );
   };
 
+  /**
+   * Render method
+   *
+   * @return html
+   */
   render() {
     const { currentLocation, currentLocationObj, savedLocations } = this.props;
     const { lat: currentLat, lng: currentLng } = currentLocationObj;
@@ -56,5 +61,5 @@ const mapDispatchToProps = {
 
 export default connect(
   mapStateToProps,
-    mapDispatchToProps
+  mapDispatchToProps
 )( CurrentLocation );
