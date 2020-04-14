@@ -1,4 +1,3 @@
-export const GMAP_API_KEY          = 'AIzaSyBjKh5Y6i4W4cBkzzYmHiQcJfdag6p-H28';
 export const PLACES_PER_PAGE       = 2; // default: 6
 export const PAGINATION_START_PAGE = 0; // default: 0
 

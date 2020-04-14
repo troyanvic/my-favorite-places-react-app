@@ -3,9 +3,6 @@ import { connect }          from 'react-redux';
 import Geocode              from 'react-geocode';
 import Autocomplete         from 'react-google-autocomplete';
 
-// constants
-import { GMAP_API_KEY } from '../../constants';
-
 // actions
 import { changeCurrentPlace } from '../../actions/mapActions';
 
@@ -14,7 +11,7 @@ class Search extends Component {
     super( props );
 
     // set Google Map API Key
-    Geocode.setApiKey( GMAP_API_KEY );
+    Geocode.setApiKey( process.env.REACT_APP_GMAP_API_KEY );
   }
 
   /**
