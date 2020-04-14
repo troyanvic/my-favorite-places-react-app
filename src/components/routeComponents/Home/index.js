@@ -9,6 +9,11 @@ import LocationList    from '../../LocationList/LocationList';
 import Footer          from '../../Footer/Footer';
 
 class Home extends Component {
+  componentDidMount() {
+    // Change page title
+    document.title = this.props.title;
+  }
+
   render() {
     return(
       <div className="app">

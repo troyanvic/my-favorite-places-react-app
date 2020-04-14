@@ -17,7 +17,7 @@ class Header extends Component {
     if ( location.pathname === '/' ) {
       return (
         <header className="header">
-          <h1 className="header__title">My favorite places</h1>
+          <h1 className="header__title">My Favorite Places</h1>
         </header>
       );
     } else {
@@ -27,7 +27,7 @@ class Header extends Component {
             <span className="header__title--back"
                  onClick={ () => this.handleClick( history ) }>
               <span className="header__title--back__icon" />
-            </span>My favorite places
+            </span>My Favorite Places
           </h1>
         </header>
       )

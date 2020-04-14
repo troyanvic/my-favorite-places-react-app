@@ -19,11 +19,11 @@ class App extends Component {
         <Switch>
           <Route exact
                  path={ '/' }
-                 render={ ( props ) => <Home { ...props } /> } />
+                 render={ ( props ) => <Home { ...props } title="My Favorite Places" /> } />
 
           <Route exact
                  path={ '/locations' }
-                 render={ ( props ) => <Locations { ...props } /> } />
+                 render={ ( props ) => <Locations { ...props } title="Locations | My Favorite Places" /> } />
         </Switch>
       </Router>
     )
